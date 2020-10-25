@@ -5,6 +5,7 @@ import * as path from "path";
 const app = express();
 
 app.use(express.static('/public'));
+console.log(path.join(__dirname + "/public/index.html"));
 
 
 //production mode
