@@ -1,9 +1,19 @@
 import * as express from 'express';
 import apiRouter from './routes';
+// import path from "path";
 
 const app = express();
 
 app.use(express.static('public'));
+
+
+//production mode
+// if(process.env.NODE_ENV === 'production') {
+//     app.get('*', (req, res) => {
+//         res.sendfile(path.join(__dirname = 'public/index.html'));
+//     })
+// }
+
 app.use(apiRouter);
 
 const port = process.env.PORT || 3000;
