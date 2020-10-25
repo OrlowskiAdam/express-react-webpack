@@ -10,7 +10,7 @@ app.use(express.static('public'));
 //production mode
 if(process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
-        res.sendfile(path.join(__dirname = 'public/index.html'));
+        res.sendfile(path.join(__dirname, 'public/index.html'));
     })
 }
 
