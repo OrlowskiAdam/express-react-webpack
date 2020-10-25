@@ -1,5 +1,6 @@
 const path = require('path');
-var nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const serverConfig = {
     mode: process.env.NODE_ENV || 'development',
@@ -31,7 +32,7 @@ const serverConfig = {
 };
 
 const clientConfig = {
-    mode: process.env.NODE_ENV || 'development',
+    mode: 'production',
     entry: './src/client/index.tsx',
     devtool: 'inline-source-map',
     module: {
@@ -58,7 +59,7 @@ const clientConfig = {
         extensions: ['.tsx', '.ts', '.js', '.css', '.scss']
     },
     output: {
-        filename: 'app.js',
+        filename: 'app.min.js',
         path: path.resolve(__dirname, 'public/js')
     }
 };
