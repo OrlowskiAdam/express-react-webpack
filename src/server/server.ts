@@ -1,10 +1,10 @@
 import * as express from 'express';
 import apiRouter from './routes';
-// import path from "path";
+import * as path from "path";
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public/index.html'));
 
 
 //production mode
