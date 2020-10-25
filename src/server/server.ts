@@ -4,14 +4,13 @@ import * as path from "path";
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('/public'));
 
 
 //production mode
 if(process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
-        app.use(express.static('public'));
-        res.sendfile(path.resolve('index.html'));
+        res.sendfile(path.join(__dirname, '/public/index.html'));
     })
 }
 
